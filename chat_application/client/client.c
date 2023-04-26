@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <netdb.h>
 
 void error(const char *msg)
 {
@@ -14,9 +15,10 @@ void error(const char *msg)
 }
 int main(int argc, char *argv[])
 {
-    int sockfd, port, n;
+    int sockfd, portno, n;
     struct sockaddr_in server_addr;
     struct hostent *server;
+    char buffer[255];
     if (argc < 3)
     {
         printf("Please provide port number.\n");

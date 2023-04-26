@@ -63,7 +63,7 @@ int main(int argc, char *argv[]){
             error("Error on writing.");
         }
 
-        if(strncmp("Bye",buffer,3)){
+        if(strncmp("Bye",buffer,3) == 0){
             break;
         } // loop break
 
